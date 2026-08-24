@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -4216,10 +4216,11 @@ window.Quarto = {
   <li><a href="#step-2-variable-selection" id="toc-step-2-variable-selection" class="nav-link" data-scroll-target="#step-2-variable-selection"><span class="header-section-number">3.1.2</span> Step 2: Variable Selection</a></li>
   <li><a href="#step-3-specify-model-customize-plot" id="toc-step-3-specify-model-customize-plot" class="nav-link" data-scroll-target="#step-3-specify-model-customize-plot"><span class="header-section-number">3.1.3</span> Step 3: Specify Model &amp; Customize Plot</a></li>
   </ul></li>
-  <li><a href="#app-demonstrations" id="toc-app-demonstrations" class="nav-link" data-scroll-target="#app-demonstrations"><span class="header-section-number">3.2</span> App Demonstrations</a>
+  <li><a href="#need-help" id="toc-need-help" class="nav-link" data-scroll-target="#need-help"><span class="header-section-number">3.2</span> Need Help?</a></li>
+  <li><a href="#app-demonstrations" id="toc-app-demonstrations" class="nav-link" data-scroll-target="#app-demonstrations"><span class="header-section-number">3.3</span> App Demonstrations</a>
   <ul class="collapse">
-  <li><a href="#demo-1-basic-workflow" id="toc-demo-1-basic-workflow" class="nav-link" data-scroll-target="#demo-1-basic-workflow"><span class="header-section-number">3.2.1</span> Demo 1: Basic Workflow</a></li>
-  <li><a href="#demo-2-customized-workflow" id="toc-demo-2-customized-workflow" class="nav-link" data-scroll-target="#demo-2-customized-workflow"><span class="header-section-number">3.2.2</span> Demo 2: Customized Workflow</a></li>
+  <li><a href="#demo-1-basic-workflow" id="toc-demo-1-basic-workflow" class="nav-link" data-scroll-target="#demo-1-basic-workflow"><span class="header-section-number">3.3.1</span> Demo 1: Basic Workflow</a></li>
+  <li><a href="#demo-2-customized-workflow" id="toc-demo-2-customized-workflow" class="nav-link" data-scroll-target="#demo-2-customized-workflow"><span class="header-section-number">3.3.2</span> Demo 2: Customized Workflow</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#ai-disclosure" id="toc-ai-disclosure" class="nav-link" data-scroll-target="#ai-disclosure"><span class="header-section-number">4</span> AI Disclosure</a></li>
@@ -4460,22 +4461,27 @@ Figure 1: Mosaic Display of Clinical Data Testing Mutual Independence
 <li>Whether or not to display the <span class="math inline">\(G^2\)</span> statistic in the title (only shows if one specifies their own formula; defaults to no). If a user wishes to display both the formula title and <span class="math inline">\(G^2\)</span> in the plot, the title will print the formula, followed by a comma and the <span class="math inline">\(G^2\)</span> value (e.g., “Freq ~ A + B, <span class="math inline">\(G^2\)</span> = 10”. If only <span class="math inline">\(G^2\)</span> is specified, only the <span class="math inline">\(G^2\)</span> will be displayed (e.g., “<span class="math inline">\(G^2\)</span> = 10”).</li>
 <li>Split directions: Whether to shift the x-axis with the y-axis. Ticking off the respective box will swap the axis, and un-ticking it off will swap the axes back to how they were before.</li>
 </ol>
-<p>To transfer the final mosaic display, users should simply right click the plot, copy it, and paste it to wherever they wish. Alternatively, they may download the plot as a PNG or SVG file by simply clicking on the PNG or SVG download buttons (located at the top-right of the plot) respectively.</p>
+<p>To transfer the final mosaic display, users should simply right click the plot, copy it, and paste it to wherever they wish. Alternatively, they may download the plot as a PNG or SVG file by simply clicking on the PNG or SVG download buttons (located at the top-right of the plot), respectively.</p>
+<p>If users would like to view the code that underlies the generated plot, they may do so by clicking on the Code button on the top-right of the outputted plot.</p>
 </section>
 </section>
 </section>
-<section id="app-demonstrations" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="app-demonstrations"><span class="header-section-number">3.2</span> App Demonstrations</h2>
+<section id="need-help" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="need-help"><span class="header-section-number">3.2</span> Need Help?</h2>
+<p>If users wish to seek clarification on the app, a help document can be found by clicking on the “?” icon at the bottom-right corner of the app. There is an additional help document detailing how to format frequency data as well. To view it, the user must select that they would like to import data, then click on the “Frequency Format Guide”.</p>
+</section>
+<section id="app-demonstrations" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="app-demonstrations"><span class="header-section-number">3.3</span> App Demonstrations</h2>
 <p>To show <em>Shiny Mosaics</em> in action, we created short demonstrations. Each demonstration shows the app being used from start to finish. The first is a simple run-through with a default data set without graphical customization, whereas the second involves uploading a custom data set and customizing the mosaic display.</p>
-<section id="demo-1-basic-workflow" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="demo-1-basic-workflow"><span class="header-section-number">3.2.1</span> Demo 1: Basic Workflow</h3>
-<p>In this demo, the user selects the <code>EmploymentStatus</code> dataset (Step 1), leaves the factor selection unchanged (Step 2), configures a conditional model with standardized residuals (<code>rstandard</code>), and exports the resulting plot as a PNG file (Step 3).</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/pN3qs7Q3Qks" title frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<section id="demo-1-basic-workflow" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="demo-1-basic-workflow"><span class="header-section-number">3.3.1</span> Demo 1: Basic Workflow</h3>
+<p>In this demo, the user selects the <code>EmploymentStatus</code> dataset (Step 1), leaves the factor selection unchanged (Step 2), configures a conditional model with standardized residuals (<code>rstandard</code>), and exports the resulting plot as a PNG file (Step 3). They also view the code underlying the plot.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/kwuFUwvP2mo" title frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 </section>
-<section id="demo-2-customized-workflow" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="demo-2-customized-workflow"><span class="header-section-number">3.2.2</span> Demo 2: Customized Workflow</h3>
+<section id="demo-2-customized-workflow" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="demo-2-customized-workflow"><span class="header-section-number">3.3.2</span> Demo 2: Customized Workflow</h3>
 <p>In this demo, the user imports a custom data set, and selects the appropriate frequency column and factors (Step 1), specifies three factors to display (Step 2), specifies the model, customizes the color theme of the plot, and exports it as a SVG file (Step 3).</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Oc3vs2oCUJs" title frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/TDwrEJfYQ8Y" title frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 </section>
 </section>
 </section>
