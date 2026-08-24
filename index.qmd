@@ -1,5 +1,5 @@
 ---
-title: "Final Report"
+title: "*Shiny Mosaics*: A Shiny Implementation of Interactive Mosaic Displays"
 author: "Gabriel Crone & Naomi Martinez Gutierrez"
 bibliography: references.bib
 ---
@@ -14,12 +14,11 @@ An *n*-way table (or contingency table) is a multi-dimensional grid used to summ
 
 Log-linear models are a class of generalized linear models used to analyze patterns of association and independence in *n*-way tables. Rather than predicting a dependent variable, log-linear models treat all variables symmetrically, modeling the logarithm of the expected cell frequencies ($\mu$) as a linear combination of main effects and interaction terms:
 
-$$\log(\mu_{ijk}) = \lambda + \lambda_i^A + \lambda_j^B + \lambda_k^C + \lambda_{ij}^{AB} + \dots$$
-The goal is to find the most parsimonious model that explains the data. A **Mutual Independence** model assumes no associations between variables, while a **Saturated Model** perfectly fits the data by including all possible interaction terms.
+$$\log(\mu_{ijk}) = \lambda + \lambda_i^A + \lambda_j^B + \lambda_k^C + \lambda_{ij}^{AB} + \dots$$ The goal is to find the most parsimonious model that explains the data. A **Mutual Independence** model assumes no associations between variables, while a **Saturated Model** perfectly fits the data by including all possible interaction terms.
 
 ## What are mosaic displays?
 
-A mosaic display is a graphical representation of an *n*-way table where the area of each "tile" is proportional to the observed frequency in that cell. 
+A mosaic display is a graphical representation of an *n*-way table where the area of each "tile" is proportional to the observed frequency in that cell.
 
 They serve as the visual counterpart to **log-linear models** by encoding the model residuals (i.e., the difference between observed and expected frequencies) into the color and intensity of the tiles.
 
@@ -27,7 +26,7 @@ The *Visual Grammar* of the mosaic display is:
 
 **Tiles:** The area represents the counts.
 
-**Shading:** Colors represent the **residuals** (typically Pearson or Standardized residuals). 
+**Shading:** Colors represent the **residuals** (typically Pearson or Standardized residuals).
 
 **Interpretation:** Blue shading indicates that the observed count is *higher* than the model predicts, while red indicates it is *lower*.
 
@@ -45,7 +44,6 @@ To illustrate, consider a psychopharmacological study investigating a new drug. 
 | Placebo   | Depression | Declined | 60        |
 | Placebo   | Anxiety    | Improved | 35        |
 | Placebo   | Anxiety    | Declined | 65        |
-
 
 By fitting a **Mutual Independence** model, we can visualize efficacy of the drug:
 
@@ -81,27 +79,29 @@ vcd::mosaic(mod_indep,
 
 # Mosaic Displays in action: *mosaics* app
 
-The original [*mosaics*](http://euclid.psych.yorku.ca/cgi/mosaics) web application, developed by Dr. Michael Friendly, serves as our inspiration for modern interactive categorical data visualization. As a pioneering tool in the field, it was designed to allow researchers to move beyond static plots and create customized mosaic displays based on either user-inputted data or a selection of default datasets. 
+The original [*mosaics*](http://euclid.psych.yorku.ca/cgi/mosaics) web application, developed by Dr. Michael Friendly, serves as our inspiration for modern interactive categorical data visualization. As a pioneering tool in the field, it was designed to allow researchers to move beyond static plots and create customized mosaic displays based on either user-inputted data or a selection of default datasets.
 
 The original *mosaics* interface provided customizations that allowed user control over both the statistical and visual aspects of the display:
 
 ### Analysis and Model Specification
+
 The app allowed users to define the underlying statistical logic of the plot by selecting:
 
-*   **Fit Type:** Users could specify the type of independence model being tested, such as **MUTUAL** (all variables independent), **JOINT** (one variable independent of others), or **CONDIT** (conditional independence).
+- **Fit Type:** Users could specify the type of independence model being tested, such as **MUTUAL** (all variables independent), **JOINT** (one variable independent of others), or **CONDIT** (conditional independence).
 
-*   **Variable Order:** Users could manipulate the order of variables in the model, which dictates the nesting of the mosaic tiles.
+- **Variable Order:** Users could manipulate the order of variables in the model, which dictates the nesting of the mosaic tiles.
 
-*   **Residual Type:** The app supported various methods for calculating residuals, including Pearson (**GF**), Likelihood Ratio (**LR**), and Freeman-Tukey (**FT**).
+- **Residual Type:** The app supported various methods for calculating residuals, including Pearson (**GF**), Likelihood Ratio (**LR**), and Freeman-Tukey (**FT**).
 
 ### Display Options
+
 To ensure the resulting plots were informative and publication-ready, *mosaics* included several aesthetic controls:
 
-*   **Fill Type:** Options to adjust the pattern and style of shading to represent residual magnitude.
+- **Fill Type:** Options to adjust the pattern and style of shading to represent residual magnitude.
 
-*   **Text Height:** The ability to scale the height of text labels for better legibility.
+- **Text Height:** The ability to scale the height of text labels for better legibility.
 
-*   **Split Directions:** Control over the "direction" of the partitions (horizontal vs. vertical), allowing users to choose how to divide the mosaic to best reveal the data structure.
+- **Split Directions:** Control over the "direction" of the partitions (horizontal vs. vertical), allowing users to choose how to divide the mosaic to best reveal the data structure.
 
 While the original *mosaics* app established these essential parameters for categorical analysis, its reliance on older web technologies provided the motivation for the development of our modern, R-based re-imagining.
 
@@ -177,7 +177,12 @@ There are many options to customize and personalize the mosaic display so it bes
 4.  Whether or not to display the $G^2$ statistic in the title (only shows if one specifies their own formula; defaults to no). If a user wishes to display both the formula title and $G^2$ in the plot, the title will print the formula, followed by a comma and the $G^2$ value (e.g., "Freq \~ A + B, $G^2$ = 10". If only $G^2$ is specified, only the $G^2$ will be displayed (e.g., "$G^2$ = 10").
 5.  Split directions: Whether to shift the x-axis with the y-axis. Ticking off the respective box will swap the axis, and un-ticking it off will swap the axes back to how they were before.
 
-To transfer the final mosaic display, users should simply right click the plot, copy it, and paste it to wherever they wish. Alternatively, they may download the plot as a PNG or SVG file by simply clicking on the PNG or SVG download buttons (located at the top-right of the plot) respectively.
+To transfer the final mosaic display, users should simply right click the plot, copy it, and paste it to wherever they wish. Alternatively, they may download the plot as a PNG or SVG file by simply clicking on the PNG or SVG download buttons (located at the top-right of the plot), respectively.
+
+If users would like to view the code that underlies the generated plot, they may do so by clicking on the Code button on the top-right of the outputted plot.
+
+## Need Help?
+If users wish to seek clarification on the app, a help document can be found by clicking on the "?" icon at the bottom-right corner of the app. There is an additional help document detailing how to format frequency data as well. To view it, the user must select that they would like to import data, then click on the "Frequency Format Guide".
 
 ## App Demonstrations
 
@@ -185,14 +190,22 @@ To show *Shiny Mosaics* in action, we created short demonstrations. Each demonst
 
 ### Demo 1: Basic Workflow
 
-In this demo, the user selects the `EmploymentStatus` dataset (Step 1), leaves the factor selection unchanged (Step 2), configures a conditional model with standardized residuals (`rstandard`), and exports the resulting plot as a PNG file (Step 3).
+In this demo, the user selects the `EmploymentStatus` dataset (Step 1), leaves the factor selection unchanged (Step 2), configures a conditional model with standardized residuals (`rstandard`), and exports the resulting plot as a PNG file (Step 3). They also view the code underlying the plot.
 
-{{< video https://www.youtube.com/watch?v=pN3qs7Q3Qks >}}
+{{< video https://youtu.be/kwuFUwvP2mo >}}
 
 ### Demo 2: Customized Workflow
 
 In this demo, the user imports a custom data set, and selects the appropriate frequency column and factors (Step 1), specifies three factors to display (Step 2), specifies the model, customizes the color theme of the plot, and exports it as a SVG file (Step 3).
 
-{{< video https://www.youtube.com/watch?v=Oc3vs2oCUJs >}}
+{{< video https://youtu.be/TDwrEJfYQ8Y >}}
+
+# AI Disclosure
+
+Generative artificial intelligence (AI), namely ChatGPT 4.0, was used regularly throughout the course of creating the code for the app. Whenever GPT 4.0 was used, the first author ensured that all code produced by it was correct by rigorously inspecting the code to ensure it was accurate, then running it over many trials to ensure that it worked as it should. Often, the first author would push back against advice suggested by the AI if it was cumbersome, verbose, or inaccurate, opting instead to always generate code that would work based on his prior experience with shiny and R. In the spirit of transparency, all chats with AI are available [here](https://chatgpt.com/g/g-p-6988f4e58eb881918215c4e406a60e20-cat-dat-shiny-app/project).
+
+GPT 4.0 was also used to troubleshoot any bugs and new features for the app. As before, whenever GPT 4.0 was consulted, the first author ensured that solutions proposed worked theoretically (the code was logical and coherent with the code base) and worked in practice (via re-running the app and testing it out several times)
+
+AI, however, was not consulted throughout the process of creating this report.
 
 # References

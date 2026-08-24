@@ -1,0 +1,10 @@
+name: app_writeup
+title:
+username: fohpsyc
+account: fohpsyc
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 17282550
+bundleId: 11941815
+url: https://fohpsyc.shinyapps.io/app_writeup/
+version: 1
